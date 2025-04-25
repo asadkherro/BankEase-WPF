@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\AccountView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AccountViews\ChangePasswordView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AccountViews\ChangeUsernameView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AccountViews\CloseAccountView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AccountViews\ModifyTypeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AccountViews\ServicesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminViews\AdminAccountView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminViews\AdminHomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AdminViews\AdminTransactionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DepositView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\FundsTransferView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HistoryView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\HomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Register.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TransactionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\WithdrawView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ResourceDictionary\AuthStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResourceDictionary\CommonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountViews\ChangePasswordView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountViews\ChangeUsernameView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountViews\CloseAccountView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountViews\ModifyTypeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AccountViews\ServicesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminViews\AdminAccountView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminViews\AdminHomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AdminViews\AdminTransactionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DepositView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\FundsTransferView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HistoryView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Register.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TransactionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\WithdrawView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

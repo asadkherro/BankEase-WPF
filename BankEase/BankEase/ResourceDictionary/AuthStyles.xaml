@@ -1,0 +1,91 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style x:Key="MainHeading" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="35" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Foreground" Value="#FFFFFf" />
+    </Style>
+
+    <Style x:Key="NormalText" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="#FFFFFf" />
+    </Style>
+
+    <Style x:Key="ActionButton" TargetType="Button">
+        <Setter Property="FontSize"  Value="20" />
+        <Setter Property="Width"  Value="170" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                        CornerRadius="5" 
+                        BorderBrush="Gray" 
+                        BorderThickness="1">
+                        <ContentPresenter 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground"  Value="#fdeefe" />
+        <Setter Property="FocusVisualStyle"  Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="25" BorderBrush="White" BorderThickness="1" Padding="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#272522"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ExitButton" TargetType="Button">
+        <Setter Property="FontSize"  Value="13" />
+        <Setter Property="Width"  Value="65" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                    CornerRadius="5" 
+                    BorderBrush="Gray" 
+                    BorderThickness="1">
+                        <ContentPresenter 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground"  Value="#fdeefe" />
+        <Setter Property="FocusVisualStyle"  Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderBrush="White" BorderThickness="1" Padding="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#272522"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+</ResourceDictionary>

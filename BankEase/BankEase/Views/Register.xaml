@@ -1,0 +1,132 @@
+﻿<Window x:Class="BankEase.Views.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankEase.Views"
+        xmlns:viewModel ="clr-namespace:BankEase.ViewModels"
+        mc:Ignorable="d"
+        Height="450" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown">
+
+    <Border CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.RowSpan="2" >
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#272536" Offset="0" />
+                        <GradientStop Color="#272536" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Image Opacity="0.1" Width="280" Height="280" Source="/BankEase;component/Media/bg.png"
+                             Margin="0,0,-2,-2" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-15.169"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="1.5*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="0" Text="Welcome To BankEase" Style="{StaticResource MainHeading}"/>
+                        <StackPanel VerticalAlignment="Center" Grid.Row="1">
+                            <TextBlock Margin="0,10,0,0" Text="Already have an account?"  Style="{StaticResource NormalText}"/>
+                            <Button x:Name="SignInButton" Click="SignInButton_Click"  Content="Sign In Now" Background="Transparent" Margin="0,20,0,0" Style="{StaticResource ActionButton}" />
+                            <Button x:Name="ExitButton" Click="ExitButton_Click" Content="Exit" Margin="0,20,0,0" Style="{StaticResource ExitButton}" Background="Transparent" />
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <Grid Background="#ffffff" Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Register" VerticalAlignment="Center" Foreground="#272536" Style="{StaticResource MainHeading}" />
+
+                <StackPanel Margin="70,7" Width="330" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="68"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Foreground="DarkGray" Text="Name" />
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5">
+                            <TextBox Text="{Binding Fullname}" VerticalContentAlignment="Center" FontSize="14" Padding="5" Height="40" Width="250"/>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Margin="70,7"  Width="330" Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="68"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Foreground="DarkGray" Text="Username" />
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5">
+                            <TextBox Text="{Binding Username}" VerticalContentAlignment="Center" FontSize="14" Padding="5" Height="40" Width="250"/>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Margin="70,7"  Width="330" Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="68"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Foreground="DarkGray" Text="Password" />
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5">
+                            <PasswordBox x:Name="PasswordBox" PasswordChanged="PasswordBox_PasswordChanged" VerticalContentAlignment="Center" FontSize="14" Padding="5" Height="40" Width="250"/>
+                        </Border>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Margin="70,7"  Width="330" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="68"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Foreground="DarkGray" Text="Type" />
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5">
+                            <ComboBox Margin="0,0,0,0" VerticalContentAlignment="Center" Background="Transparent" ItemsSource="{Binding AccountTypes}" 
+                            SelectedItem="{Binding AccountType, Mode=TwoWay}" 
+                            Width="250" Height="40" Name="AccountTypeBox" FontSize="14" />
+                        </Border>
+                    </Grid>
+                </StackPanel>
+                <Button Margin="70,10" Grid.Row="5" Command="{Binding RegisterCommand}" Content="Create Account" Style="{StaticResource ActionButton}" Background="#272536" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

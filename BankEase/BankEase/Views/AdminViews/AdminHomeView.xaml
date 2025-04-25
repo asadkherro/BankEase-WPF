@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="BankEase.Views.AdminViews.AdminHomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BankEase.Views.AdminViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="460" d:DesignWidth="800">
+    <StackPanel>
+        <TextBlock Text="Admin Panel"
+               Foreground="White"
+               FontSize="28"
+               HorizontalAlignment="Left"
+               Margin="0,0,0,20"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal"
+                    Margin="0,0,0,10">
+            <Border Width="200" Height="200" CornerRadius="10" Margin="0,0,45,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#FFb554" Offset="0.0"/>
+                        <GradientStop Color="#ffb73a" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center" Text="Accounts Summary" FontWeight="Bold" FontSize="17" Margin="10,10"/>
+                        <TextBlock Margin="5,13" Width="100"  Background="Transparent" Text="{Binding Active, UpdateSourceTrigger=PropertyChanged}" FontWeight="Light" FontSize="15" />
+                        <TextBlock Margin="5,13" Width="100"  Background="Transparent" Text="{Binding InActive, UpdateSourceTrigger=PropertyChanged}" FontWeight="Light" FontSize="15" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Width="200" Height="200" CornerRadius="10" Margin="0,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#5bc3ff" Offset="0.0" />
+                        <GradientStop Color="#3aa0ff" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock HorizontalAlignment="Center" Text="Transaction Summary" FontWeight="Bold" FontSize="17" Margin="10,10"/>
+                        <TextBlock Margin="5,6" Width="100"  Background="Transparent" Text="{Binding TotalTransactions, UpdateSourceTrigger=PropertyChanged}" FontWeight="Light" FontSize="15" />
+                        <TextBlock Margin="5,6" Width="100"  Background="Transparent" Text="{Binding Deposit, UpdateSourceTrigger=PropertyChanged}" FontWeight="Light" FontSize="15" />
+                        <TextBlock Margin="5,6" Width="100"  Background="Transparent" Text="{Binding Withdrawl, UpdateSourceTrigger=PropertyChanged}" FontWeight="Light" FontSize="15" />
+                        <TextBlock Margin="5,6" Width="100"  Background="Transparent" Text="{Binding FundsTransfer, UpdateSourceTrigger=PropertyChanged}" FontWeight="Light" FontSize="15" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock>
+                <TextBlock Text="Recent Requests" Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="0,0,0,10" />
+            </TextBlock>
+
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding AccountRequests}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Width="150" Height="60" CornerRadius="10" 
+                            Background="{Binding Type, Converter={StaticResource RequestTypeToColorConverter}}" 
+                            Margin="10,20" Cursor="Hand" >
+                                <Button  Command="{Binding DataContext.ApproveRequestCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" 
+                                         CommandParameter="{Binding AccountNumber}" 
+                                         Background="Transparent"
+                                         BorderThickness="0"
+                                         Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding User.Name}" 
+                                                    FontWeight="Bold" 
+                                                    FontSize="17" 
+                                                    Margin="7,4,0,0" 
+                                                    Foreground="{Binding ColorCode}" />
+                                        <TextBlock Text="{Binding RequestType}"  
+                                                    FontSize="15" 
+                                                    Margin="7,4,0,0" 
+                                                    Foreground="{Binding ColorCode}" />
+                                    </StackPanel>
+                                </Button>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <!--<StackPanel Orientation="Horizontal">
+                <Border Width="150" Height="60" Background="#844eff" Margin="0" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Asad Kherro" FontWeight="Bold" FontSize="17" Margin="7,4,0,0" Foreground="White" />
+                        <TextBlock Text="Close Account"  FontSize="15" Margin="7,4,0,0" Foreground="White" />
+                    </StackPanel>
+                </Border>
+                <Border Width="150" Height="150" Background="#4E99FE" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Transaction" FontWeight="Bold" FontSize="17" Margin="7,10,0,0" Foreground="White" />
+                        <TextBlock Text="Withdrawl" FontWeight="Light" FontSize="15" Margin="7,10,0,0" Foreground="White" />
+                        <TextBlock Text="Rs.15,550" FontWeight="Light" FontSize="15" Margin="7,10,0,0" Foreground="White" />
+                    </StackPanel>
+                </Border>
+                <Border Width="150" Height="150" Background="#4EFF91" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Transaction" FontWeight="Bold" FontSize="17" Margin="7,10,0,0" Foreground="Black" />
+                        <TextBlock Text="Deposit" FontWeight="Light" FontSize="15" Margin="7,10,0,0" Foreground="Black" />
+                        <TextBlock Text="Rs.15,550" FontWeight="Light" FontSize="15" Margin="7,10,0,0" Foreground="Black" />
+                    </StackPanel>
+                </Border>
+                <Border Width="150" Height="150" Background="#ECFF4E" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Transaction" FontWeight="Bold" FontSize="17" Margin="7,10,0,0" Foreground="Black" />
+                        <TextBlock Text="Deposit" FontWeight="Light" FontSize="15" Margin="7,10,0,0" Foreground="Black" />
+                        <TextBlock Text="Rs.15,550" FontWeight="Light" FontSize="15" Margin="7,10,0,0" Foreground="Black" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>-->
+
+
+        </StackPanel>
+
+    </StackPanel>
+
+</UserControl>

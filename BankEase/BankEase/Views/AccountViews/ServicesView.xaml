@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="BankEase.Views.AccountViews.ServicesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BankEase.Views.AccountViews"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <TextBlock 
+            Grid.Row="0"
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center" 
+            Text="Select or remove services" 
+            FontSize="20"
+            Foreground="White"/>
+        <StackPanel Grid.Row="1">
+            <StackPanel Margin="0,20,0,0" HorizontalAlignment="Center">
+                <CheckBox Margin="0,7" FontSize="16" IsChecked="{Binding CreditCardCheck}" Foreground="White" Content="Credit Card" />
+                <CheckBox Margin="0,7" FontSize="16" IsChecked="{Binding DebitCardCheck}" Foreground="White" Content="Debit Card" />
+                <CheckBox Margin="0,7" FontSize="16" IsChecked="{Binding HouseLoanCheck}" Foreground="White" Content="House Loan" />
+                <CheckBox Margin="0,7" FontSize="16" IsChecked="{Binding CarLoanCheck}" Foreground="White" Content="Car Loan" />
+            </StackPanel>
+            <Button Command="{Binding SaveServicesCommmand}" Margin="0,20,0,0" Background="#141319" Width="240" Style="{StaticResource TransactionPanelButton}" Content="Save Services"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

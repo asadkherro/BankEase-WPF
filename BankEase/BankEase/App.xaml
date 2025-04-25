@@ -1,0 +1,19 @@
+﻿<Application x:Class="BankEase.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BankEase"
+             xmlns:view="clr-namespace:BankEase.Views"
+             xmlns:viewModel ="clr-namespace:BankEase.ViewModels"
+             xmlns:valueConverter="clr-namespace:BankEase.Helper.ValueConverter">
+    <Application.Resources>
+        <ResourceDictionary>
+            <valueConverter:TransactionTypeToColorConverter  x:Key="TransactionTypeToColorConverter"/>
+            <valueConverter:TransactionTypeToColorConverter  x:Key="RequestTypeToColorConverter"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionary/CommonStyles.xaml"/>
+                <ResourceDictionary Source="ResourceDictionary/AuthStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>

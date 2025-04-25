@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="BankEase.Views.FundsTransferView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:viewModel ="clr-namespace:BankEase.ViewModels"
+            xmlns:local="clr-namespace:BankEase.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>       
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" FontSize="23" Foreground="White" Text="Select account" />
+                <Border Margin="7,40,7,0" Grid.Column="1" BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5">
+                    <ComboBox Margin="0,0,0,0" VerticalContentAlignment="Center" Foreground="Black" Background="Transparent" ItemsSource="{Binding AccountNumbers}" 
+                         SelectedItem="{Binding AccountNumber, Mode=TwoWay}" 
+                         Width="250" Height="40" Name="AccountTypeBox" FontSize="14" />
+                </Border>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock HorizontalAlignment="Center" FontSize="23" Foreground="White" Text="Enter Amount : " />
+                <Border Margin="7,40,7,0" Grid.Column="1" BorderThickness="1" BorderBrush="#acb0af" CornerRadius="5">
+                    <TextBox Text="{Binding Amount}" VerticalContentAlignment="Center" FontSize="14" Padding="5" Height="40" Width="250"/>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="1" VerticalAlignment="Top" Command="{Binding TransferCommand}" Background="#141319" Width="240" Style="{StaticResource TransactionPanelButton}" Content="Confirm" />
+    </Grid>
+</UserControl>
